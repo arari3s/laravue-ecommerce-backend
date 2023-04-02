@@ -22,6 +22,19 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 <script src="{{ asset('assets/js/init/fullcalendar-init.js') }}"></script>
 
+{{-- CDN CKEditor5 --}}
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('.ckeditor'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
 <!--Local Stuff-->
 <script>
     jQuery(document).ready(function($) {

@@ -29,7 +29,7 @@
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->type }}</td>
-                                            <td>{{ $item->price }}</td>
+                                            <td>{{ number_format($item->price) }}</td>
                                             <td>{{ $item->quantity }}</td>
                                             <td>
                                                 <a href="#" class="btn btn-info btn-sm">

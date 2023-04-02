@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -22,15 +24,19 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.products.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->name);
+
+        Product::create($data);
+        return redirect()->route('products.index');
     }
 
     /**
