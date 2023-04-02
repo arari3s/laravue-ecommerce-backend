@@ -40,7 +40,7 @@
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
 
-                                                <form action="{{ route('profile.destroy', $item->id) }}" method="POST"
+                                                <form action="{{ route('products.destroy', $item->id) }}" method="POST"
                                                     class="d-inline">
                                                     @method('delete')
                                                     @csrf
