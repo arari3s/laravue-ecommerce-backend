@@ -30,6 +30,7 @@ Route::middleware(['auth', 'verified'])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
+        Route::get('products/{id}/gallery', [ProductController::class, 'gallery'])->name('products.gallery');
         Route::resource('products', ProductController::class);
         Route::resource('product-galleries', ProductGalleryController::class);
     });
