@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductGalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
@@ -30,6 +31,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::resource('products', ProductController::class);
+        Route::resource('product-galleries', ProductGalleryController::class);
     });
 
 Route::middleware('auth')->group(function () {
