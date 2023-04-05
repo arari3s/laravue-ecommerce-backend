@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('products/{id}/gallery', [ProductController::class, 'gallery'])->name('products.gallery');
         Route::resource('products', ProductController::class);
         Route::resource('product-galleries', ProductGalleryController::class);
+        Route::resource('transactions', TransactionController::class);
     });
 
 Route::middleware('auth')->group(function () {
