@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('number');
             $table->string('address');
             $table->integer('transaction_total');
-            $table->integer('transaction_status');
+            $table->string('transaction_status');
 
             $table->softDeletes();
             $table->timestamps();

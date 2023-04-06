@@ -33,32 +33,32 @@
                                             <td>{{ $item->number }}</td>
                                             <td>{{ number_format($item->transaction_total) }}</td>
                                             <td>
-                                                @if ($items->transaction_status == 'PENDING')
+                                                @if ($item->transaction_status == 'PENDING')
                                                     <span class="badge badge-info">
-                                                    @elseif ($items->transaction_status == 'SUCCESS')
+                                                    @elseif ($item->transaction_status == 'SUCCESS')
                                                         <span class="badge badge-success">
-                                                        @elseif ($items->transaction_status == 'FAILED')
+                                                        @elseif ($item->transaction_status == 'FAILED')
                                                             <span class="badge badge-warning">
                                                             @else
                                                                 <span>
                                                 @endif
-                                                {{ $items->transaction_status }}
+                                                {{ $item->transaction_status }}
                                                 </span>
                                             </td>
                                             <td>
-                                                {{-- <a href="{{ route('products.edit', $item->id) }}"
+                                                <a href="{{ route('transactions.edit', $item->id) }}"
                                                     class="btn btn-primary btn-sm">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
 
-                                                <form action="{{ route('products.destroy', $item->id) }}" method="POST"
+                                                <form action="{{ route('transactions.destroy', $item->id) }}" method="POST"
                                                     class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger btn-sm">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
-                                                </form> --}}
+                                                </form>
                                             </td>
                                         </tr>
                                     @empty
