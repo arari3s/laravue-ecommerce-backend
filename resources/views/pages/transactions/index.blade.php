@@ -32,13 +32,21 @@
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->number }}</td>
                                             <td>{{ number_format($item->transaction_total) }}</td>
-                                            <td>{{ $item->status }}</td>
                                             <td>
-                                                <a href="{{ route('products.gallery', $item->id) }}"
-                                                    class="btn btn-info btn-sm">
-                                                    <i class="fa fa-picture-o"></i>
-                                                </a>
-                                                <a href="{{ route('products.edit', $item->id) }}"
+                                                @if ($items->transaction_status == 'PENDING')
+                                                    <span class="badge badge-info">
+                                                    @elseif ($items->transaction_status == 'SUCCESS')
+                                                        <span class="badge badge-success">
+                                                        @elseif ($items->transaction_status == 'FAILED')
+                                                            <span class="badge badge-warning">
+                                                            @else
+                                                                <span>
+                                                @endif
+                                                {{ $items->transaction_status }}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                {{-- <a href="{{ route('products.edit', $item->id) }}"
                                                     class="btn btn-primary btn-sm">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
@@ -50,7 +58,7 @@
                                                     <button class="btn btn-danger btn-sm">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
-                                                </form>
+                                                </form> --}}
                                             </td>
                                         </tr>
                                     @empty

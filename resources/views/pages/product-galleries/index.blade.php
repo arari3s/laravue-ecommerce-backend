@@ -44,7 +44,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="6" class="text-center p-5">
+                                            <td colspan="5" class="text-center p-5">
                                                 Data tidak tersedia
                                             </td>
                                         </tr>
