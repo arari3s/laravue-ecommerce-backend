@@ -24,3 +24,7 @@ composer install
 ## Documentation API
 
 [API](https://documenter.getpostman.com/view/9539633/2s93Y2SMRa)
+
+## Documentation ERD
+
+[ERD](https://whimsical.com/erd-laravue-ecommerce-VWwEpuvgVEyTYvhBnggnVS)
